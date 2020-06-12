@@ -25,18 +25,16 @@ slider.autoPlay(timeBetweenSlides);
 
 html file should look something like this example:
 
-<dl>
-
+```html
 <!DOCTYPE html>
 <html>
 
-<>
     <head>
         <meta charset="utf-8">
         <title>slider</title>
         <link rel="stylesheet" href="./main.css">
     </head>
-<>
+
     <body>
         <h1>A verry simple image slider with autoplay</h1>
         <div class="sliderWrapper">
@@ -51,12 +49,10 @@ html file should look something like this example:
 
 
 
-<>
         <script src="./slider.js"></script>
-<>
         <script>
+```
 
-            <>
 
             ```javascript
 
@@ -71,8 +67,8 @@ html file should look something like this example:
 
             ```
 
-<>
+```html
         </script>
-<>        
     </body>
 </html>
+```
