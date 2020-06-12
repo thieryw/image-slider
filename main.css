@@ -1,0 +1,39 @@
+body {
+  background-color: beige;
+}
+body h1 {
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+}
+body .sliderWrapper {
+  position: absolute;
+  width: 900px;
+  left: 50%;
+  margin-left: -450px;
+  top: 50vh;
+  margin-top: -118px;
+  text-align: center;
+}
+body .sliderWrapper .sliderImage {
+  width: 600px;
+  height: 350px;
+}
+body .sliderWrapper #prev,
+body .sliderWrapper #next {
+  width: 30px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 3rem;
+  margin-top: -27.5px;
+}
+body .sliderWrapper #prev {
+  margin-left: -350px;
+}
+body .sliderWrapper #next {
+  margin-left: 320px;
+}
+body .sliderWrapper #prev:hover,
+body .sliderWrapper #next:hover {
+  cursor: pointer;
+}
