@@ -51,10 +51,8 @@ html file should look something like this example:
 
         <script src="./slider.js"></script>
         <script>
-```
 
 
-            ```javascript
 
             let slider = new Slider(document.getElementsByClassName("sliderImage"),
             document.getElementById("prev"), document.getElementById("next"), 0);
@@ -65,9 +63,8 @@ html file should look something like this example:
                     
             slider.autoPlay(7000);
 
-            ```
 
-```html
+        
         </script>
     </body>
 </html>
