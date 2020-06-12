@@ -43,7 +43,6 @@ Slider.prototype.autoPlay = function autoPlay(time){
     const slides = self.slides;
     let _time = 0;
 
-
     let timer = setInterval(function(){
 
         if(_time >= time){
@@ -52,14 +51,9 @@ Slider.prototype.autoPlay = function autoPlay(time){
             slides[self.currentSlideIndex].style.display = "none";
             slides[self.currentSlideIndex].style.opacity = `${0}`;
 
-            if(self.currentSlideIndex === slides.length - 1){
+            self.currentSlideIndex = self.currentSlideIndex === slides.length - 1 ?
+                                     0 : self.currentSlideIndex + 1;
 
-                self.currentSlideIndex = 0;
-                self.fadeInAnimation(slides[self.currentSlideIndex]);
-                return;
-            }
-
-            self.currentSlideIndex++;
             self.fadeInAnimation(slides[self.currentSlideIndex]);
 
             return;
@@ -68,19 +62,12 @@ Slider.prototype.autoPlay = function autoPlay(time){
         _time += 100;
 
         if(self.nextArrow && self.prevArrow){
-            console.log("ok");
             for(const arrow of [self.nextArrow, self.prevArrow]){
                 arrow.addEventListener("click", ()=>{
                     _time = 0;
                 });
             }
         }
-
-
-
-
-
-
     }, 100);
     
 }
@@ -90,38 +77,28 @@ Slider.prototype.prevNextSlide = function prevNextSlide(){
     const prev = this.prevArrow;
     const next = this.nextArrow;
     const slides = this.slides;
+    let index;
 
     for(const arrow of [prev, next]){
+
         arrow.addEventListener("click", ()=>{
 
-            slides[this.currentSlideIndex].style.display = "none";
-            slides[this.currentSlideIndex].style.opacity = `${0}`;
+            index = this.currentSlideIndex;
 
-            if(arrow === next){
-                if(this.currentSlideIndex === slides.length - 1){
-                    this.currentSlideIndex = 0;
-                    this.fadeInAnimation(slides[this.currentSlideIndex]);
-                    return;
-                }
+            slides[index].style.display = "none";
+            slides[index].style.opacity = `${0}`;
 
-                this.currentSlideIndex++;
-                this.fadeInAnimation(slides[this.currentSlideIndex]);
-                return;
-            }
+            arrow === next ? (index = index === slides.length - 1 ?
+                              0 : index + 1) : 
+                              (index = index === 0 ?
+                              slides.length - 1 : index - 1);
 
-            if(this.currentSlideIndex === 0){
-                this.currentSlideIndex = slides.length - 1;
-                this.fadeInAnimation(slides[this.currentSlideIndex]);
-                return;
-            }
+            this.fadeInAnimation(slides[index]);
 
-            this.currentSlideIndex--;
-            this.fadeInAnimation(slides[this.currentSlideIndex]);
+            this.currentSlideIndex = index;
 
         });
-
     }
-
 }
 
 
