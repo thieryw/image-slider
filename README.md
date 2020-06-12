@@ -22,3 +22,57 @@ slider.autoPlay(timeBetweenSlides);
 
 
 ```
+
+html file should look something like this example:
+
+<dl>
+
+<!DOCTYPE html>
+<html>
+
+<>
+    <head>
+        <meta charset="utf-8">
+        <title>slider</title>
+        <link rel="stylesheet" href="./main.css">
+    </head>
+<>
+    <body>
+        <h1>A verry simple image slider with autoplay</h1>
+        <div class="sliderWrapper">
+            <p id="prev">&lt</p>
+            <p id="next">&gt</p>
+            <img class="sliderImage" src="./media/1.jpg" alt="img">
+            <img class="sliderImage" src="./media/2.jpg" alt="img">
+            <img class="sliderImage" src="./media/3.jpg" alt="img">
+            <img class="sliderImage" src="./media/4.jpg" alt="img">
+            <img class="sliderImage" src="./media/5.jpg" alt="img">
+        </div>
+
+
+
+<>
+        <script src="./slider.js"></script>
+<>
+        <script>
+
+            <>
+
+            ```javascript
+
+            let slider = new Slider(document.getElementsByClassName("sliderImage"),
+            document.getElementById("prev"), document.getElementById("next"), 0);
+
+            slider.basicSliderLayout();
+                    
+            slider.prevNextSlide();
+                    
+            slider.autoPlay(7000);
+
+            ```
+
+<>
+        </script>
+<>        
+    </body>
+</html>
