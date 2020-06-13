@@ -3,27 +3,40 @@ image slider with fade animation and autoplay
 
 ## Usage
 
-include the "slider.js" file at the bottom of your html file.
+1) include the "slider.js" file at the bottom of your html file.
 
 Call the folowing functions:
 
+2) initialize slider object:
+
 ```javascript
 
+
+
 let slider = new slider(document.getElementsByClassName("imageClassName"),
-                        document.getElementById("prevArrow") 'optional; replace with null.'
-                        document.getElementById("nextArrow") 'optional; replace with null.'
-                        indexOfTheFirstImageYouWantToShow);
-
-slider.basicSliderLayout();
-
-slider.prevNextSlide(); 'optional; only if you have prev and next arrow.'
-
-slider.autoPlay(timeBetweenSlides);
-
+                        document.getElementById("prevArrow"),                       document.getElementById("nextArrow"));
 
 ```
 
-html file should look something like this example:
+Previous and next arrows are optional. you can have the slider runing automaticaly
+with Autoplay.
+
+3) Call the playSlider function:
+
+```javascript
+
+slider.playSlider(true, 3000, "slide");
+
+```
+
+first argument is for autoplay;
+
+second argument is time between slides. set to null if autoplay is false;
+
+third argument is the animation. you can choose beetween "fade" and "slide";
+
+
+## html file example:
 
 ```html
 <!DOCTYPE html>
@@ -40,32 +53,37 @@ html file should look something like this example:
         <div class="sliderWrapper">
             <p id="prev">&lt</p>
             <p id="next">&gt</p>
-            <img class="sliderImage" src="./media/1.jpg" alt="img">
-            <img class="sliderImage" src="./media/2.jpg" alt="img">
-            <img class="sliderImage" src="./media/3.jpg" alt="img">
-            <img class="sliderImage" src="./media/4.jpg" alt="img">
-            <img class="sliderImage" src="./media/5.jpg" alt="img">
+
+            <div class="flex">
+
+                <div class="imageWrapper" id="wrapper">
+                    <img class="sliderImage" src="./media/1.jpg" alt="img">
+                    <img class="sliderImage" src="./media/2.jpg" alt="img">
+                    <img class="sliderImage" src="./media/3.jpg" alt="img">
+                    <img class="sliderImage" src="./media/4.jpg" alt="img">
+                    <img class="sliderImage" src="./media/5.jpg" alt="img">
+                </div>
+
+            </div>
+
         </div>
 
 
 
+
         <script src="./slider.js"></script>
+
         <script>
-
-
-
             let slider = new Slider(document.getElementsByClassName("sliderImage"),
-            document.getElementById("prev"), document.getElementById("next"), 0);
+            document.getElementById("prev"), document.getElementById("next"));
 
-            slider.basicSliderLayout();
                     
-            slider.prevNextSlide();
+            slider.playSlider(true, 3000, "slide");
                     
-            slider.autoPlay(7000);
-
-
-        
         </script>
+        
     </body>
 </html>
 ```
+
+

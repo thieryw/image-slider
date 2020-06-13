@@ -12,11 +12,19 @@
         <div class="sliderWrapper">
             <p id="prev">&lt</p>
             <p id="next">&gt</p>
-            <img class="sliderImage" src="./media/1.jpg" alt="img">
-            <img class="sliderImage" src="./media/2.jpg" alt="img">
-            <img class="sliderImage" src="./media/3.jpg" alt="img">
-            <img class="sliderImage" src="./media/4.jpg" alt="img">
-            <img class="sliderImage" src="./media/5.jpg" alt="img">
+
+            <div class="flex">
+
+                <div class="imageWrapper" id="wrapper">
+                    <img class="sliderImage" src="./media/1.jpg" alt="img">
+                    <img class="sliderImage" src="./media/2.jpg" alt="img">
+                    <img class="sliderImage" src="./media/3.jpg" alt="img">
+                    <img class="sliderImage" src="./media/4.jpg" alt="img">
+                    <img class="sliderImage" src="./media/5.jpg" alt="img">
+                </div>
+
+            </div>
+
         </div>
 
 
@@ -26,13 +34,11 @@
 
         <script>
             let slider = new Slider(document.getElementsByClassName("sliderImage"),
-            document.getElementById("prev"), document.getElementById("next"), 0);
+            document.getElementById("prev"), document.getElementById("next"));
+
                     
-            slider.basicSliderLayout();
+            slider.playSlider(true, 7000, "slide");
                     
-            slider.prevNextSlide();
-                    
-            slider.autoPlay(7000);
         </script>
         
     </body>

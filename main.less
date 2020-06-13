@@ -12,12 +12,27 @@ body{
         margin-left: -450px;
         top: 50vh;
         margin-top: -354/3px;
-        text-align: center;
 
-        .sliderImage{
-            width: 600px;
+        .flex{
+            position: relative;
+            overflow: hidden;
             height: 350px;
+            left: 50%;
+            margin-left: -300px;
+            width: 600px;
+            .imageWrapper{
+                position: relative;
+                display: flex;
+                
+                .sliderImage{
+                    width: 600px;
+                    height: 350px;
+                }
+            }
         }
+
+
+
 
 
 

@@ -12,9 +12,20 @@ body .sliderWrapper {
   margin-left: -450px;
   top: 50vh;
   margin-top: -118px;
-  text-align: center;
 }
-body .sliderWrapper .sliderImage {
+body .sliderWrapper .flex {
+  position: relative;
+  overflow: hidden;
+  height: 350px;
+  left: 50%;
+  margin-left: -300px;
+  width: 600px;
+}
+body .sliderWrapper .flex .imageWrapper {
+  position: relative;
+  display: flex;
+}
+body .sliderWrapper .flex .imageWrapper .sliderImage {
   width: 600px;
   height: 350px;
 }
