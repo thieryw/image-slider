@@ -5,8 +5,6 @@ image slider with fade animation and autoplay
 
 1) include the "slider.js" file at the bottom of your html file.
 
-Call the folowing functions:
-
 2) initialize slider object:
 
 ```javascript
