@@ -1,5 +1,13 @@
 # image-slider
-image slider with fade animation and autoplay
+A verry simple and easy to use image slider.
+
+## Features
+
+1) fade and slide animations.
+
+2) autoplay option.
+
+
 
 ## Usage
 
